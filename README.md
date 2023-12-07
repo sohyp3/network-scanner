@@ -1,5 +1,5 @@
  # Network Scanner
- a Simple tool that scans the network using `fping` then scans each device's port using `nmap` then saves it to a csv files
+ a Simple tool that scans the network for the connected devices using `fping` then scans each device's open port using `nmap` then saves it to a csv files
 
 # Requirements:
 1. `linux`
@@ -7,9 +7,16 @@
 3. `nmap`
 4. `fping`
 
-### The Commands in use:
+# To Run it:
+* `git clone https://github.com/sohyp3/network-scanner`
+* `cd network-scanner`
+* `sudo python3 app.py`
+* if you don't know your network ip, run `python3 network_ip.py`
+* it will create two files
+    1. `ips.csv` the ips of the devices in your network
+    2. `ports.csv` the open ports for each ip
+
+### The Commands the scripts uses:
 1. `fping -q -a -g [network/subnet] -r 0`
 2. `nmap -sS -n --host-timeout 30s [deviceip]`
-
-
 
