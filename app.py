@@ -13,6 +13,7 @@ def exec_cmd(cmd):
     except subprocess.CalledProcessError as e:
         return e.stdout, e.stderr
 
+
 def check():
     req_packages = ['nmap', 'fping']
     should_e = False
