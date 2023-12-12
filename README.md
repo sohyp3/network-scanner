@@ -11,7 +11,7 @@
 * `git clone https://github.com/sohyp3/network-scanner`
 * `cd network-scanner`
 * `sudo python3 app.py`
-* if you don't know your network ip, run `python3 network_ip.py`
+* if you don't know your network ip, run `python3 get_network.py`
 * it will create two files
     1. `ips.csv` the ips of the devices in your network
     2. `ports.csv` the open ports for each ip
