@@ -103,7 +103,13 @@ def main():
     output_ip = network_ip + subnet_cidr
 
 
+
+    print("\n===\n===\n")
+    return output_ip
+
+
+if __name__ == '__main__':
+    output_ip = main()
     print(f"Network IP: {output_ip}")
 
 
-main()

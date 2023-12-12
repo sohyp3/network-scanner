@@ -1,10 +1,5 @@
-import os 
-import sys
-import re
-import subprocess
-import csv
-import ipaddress
-
+import os, sys,re,subprocess,csv,ipaddress
+from get_network import main
 
 def exec_cmd(cmd):
     try:
@@ -88,21 +83,24 @@ check()
 
 
 while True:
-    network_ip = input("Enter the network IP with the CIDR: (ex: 192.168.1.1/24) ")
-    network_ip = network_ip.replace(" ", "")
-    if "/" in network_ip:
-        split_ip = network_ip.split('/')
-        if len(split_ip) == 2:
-            try:
-                ipaddress.ip_address(split_ip[0])
-                int(split_ip[1])
-                break
-            except:
-                pass
-    print('Enter Something valid... \nyou can run - python3 network_ip.py - to get your network ip! ')
+    auto_ip = input("Do you want to automaticly get the ip?(Y/n) ")
+    if auto_ip.lower() =="n":
+        network_ip = input("Enter the network IP with the CIDR: (ex: 192.168.1.1/24) ")
+        network_ip = network_ip.replace(" ", "")
+        if "/" in network_ip:
+            split_ip = network_ip.split('/')
+            if len(split_ip) == 2:
+                try:
+                    ipaddress.ip_address(split_ip[0])
+                    int(split_ip[1])
+                    break
+                except:
+                    pass
+        print('Enter Something valid... \nyou can run - python3 get_network.py - to get your network ip! ')
 
-
-
+    else:
+        network_ip = main()
+        break
 
 get_ips(network_ip)
 scan_ips()
