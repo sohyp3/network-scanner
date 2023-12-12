@@ -10,7 +10,7 @@ def exec_cmd(cmd):
 
 
 def check():
-    req_packages = ['nmap', 'fping']
+    req_packages = ['nmap', 'fping','ifconfig']
     should_e = False
     for pack in req_packages:
         out,err = exec_cmd(f'which {pack}')
